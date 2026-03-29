@@ -4,9 +4,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/fireba
 import {
   getFirestore,
   collection,
-  onSnapshot,
-  query,
-  orderBy
+  onSnapshot
 } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
 
 // ===== FIREBASE CONFIG =====
@@ -79,16 +77,43 @@ document.getElementById('menu-toggle')?.addEventListener('click', () => {
 
 // ===== FIREBASE: ESCUCHAR PRODUCTOS EN TIEMPO REAL =====
 function listenProducts() {
-  const q = query(collection(db, 'productos'), orderBy('createdAt', 'desc'));
-  onSnapshot(q, (snapshot) => {
+  // Timeout de seguridad: si Firebase no responde en 8 segundos, muestra estado vacío
+  const timeout = setTimeout(() => {
+    const grid = document.getElementById('products-grid');
+    if (grid && grid.querySelector('.spinner')) {
+      grid.innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">🧺</div>
+          <h3 style="font-family:'Cinzel',serif; color:var(--color-primary-dark); margin-bottom:8px;">Aún no hay productos</h3>
+          <p>El administrador aún no ha agregado productos.<br>¡Vuelve pronto o contáctanos por WhatsApp!</p>
+        </div>
+      `;
+    }
+  }, 8000);
+
+  // Sin orderBy para evitar necesidad de índice compuesto en Firestore
+  onSnapshot(collection(db, 'productos'), (snapshot) => {
+    clearTimeout(timeout);
     allProducts = [];
     snapshot.forEach(doc => {
       allProducts.push({ id: doc.id, ...doc.data() });
     });
     renderProducts(allProducts, currentFilter);
   }, (error) => {
+    clearTimeout(timeout);
     console.error('Error cargando productos:', error);
-    renderProductsError();
+    // Si falla por permisos, mostrar estado vacío en lugar de error técnico
+    if (error.code === 'permission-denied') {
+      document.getElementById('products-grid').innerHTML = `
+        <div class="empty-state">
+          <div class="empty-icon">🔒</div>
+          <h3 style="font-family:'Cinzel',serif; color:var(--color-primary-dark); margin-bottom:8px;">Sin productos aún</h3>
+          <p>Configura las reglas de Firebase para ver los productos.<br>Revisa el README para más información.</p>
+        </div>
+      `;
+    } else {
+      renderProductsError();
+    }
   });
 }
 

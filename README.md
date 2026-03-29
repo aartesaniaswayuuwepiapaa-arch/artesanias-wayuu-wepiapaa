@@ -70,9 +70,45 @@ https://i.ibb.co/AbCdEfGh/mi-mochila.jpg
 
 ---
 
-## 🛠️ Panel Administrador
+## 🔒 Acceso al Panel Administrador
 
-### Acceso:
+El botón de admin está **oculto** en la tienda pública para que los clientes no lo vean.
+
+Para acceder al panel, ve directamente a esta URL:
+```
+https://tu-usuario.github.io/tu-repositorio/admin.html
+```
+
+**Credenciales:**
+- **Usuario:** `admin`
+- **Contraseña:** `wayuu2026`
+
+---
+
+## ⚠️ IMPORTANTE: Reglas de Firebase (necesario para que los productos carguen)
+
+Si los productos no cargan, debes configurar las reglas de Firestore:
+
+1. Ve a [console.firebase.google.com](https://console.firebase.google.com)
+2. Selecciona el proyecto **artesanias-wayuu-wepiapaa**
+3. En el menú izquierdo: **Firestore Database → Reglas**
+4. Reemplaza el contenido con estas reglas y haz clic en **Publicar**:
+
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read: if true;
+      allow write: if true;
+    }
+  }
+}
+```
+
+Sin estas reglas, los productos no se mostrarán en la tienda.
+
+---
 - Abre `admin.html`
 - **Usuario:** `admin`
 - **Contraseña:** `wayuu2026`
