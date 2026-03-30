@@ -1,34 +1,23 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Artesanías Wayuu Wepiapaa</title>
-  <meta name="description" content="Artesanías Wayuu Wepiapaa – Mochilas, chinchorros y accesorios artesanales wayuu auténticos. Arte y cultura de La Guajira.">
-  <link rel="icon" href="https://i.ibb.co/35bTfj7S/LOGO.jpg" type="image/jpeg">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Artesanías Wayuu Wepiapaa</title>
+<meta name="description" content="Mochilas, chinchorros y accesorios artesanales wayuu auténticos desde La Guajira.">
+<link rel="icon" id="favicon" href="https://i.ibb.co/35bTfj7S/LOGO.jpg" type="image/jpeg">
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-
-<!-- ANNOUNCEMENT BAR -->
-<div class="announcement-bar">
-  🎨 Artesanías 100% auténticas Wayuu &nbsp;|&nbsp; 📦 Envíos a todo Colombia &nbsp;|&nbsp; ✋ Hechas a mano con amor desde La Guajira
-</div>
-
-<!-- HEADER -->
+<div class="announce">🎨 Artesanías 100% auténticas Wayuu &nbsp;|&nbsp; 📦 Envíos a todo Colombia &nbsp;|&nbsp; ✋ Hechas a mano desde La Guajira</div>
 <header>
-  <div class="header-inner">
-    <a href="index.html" class="logo-wrap">
-      <img src="https://i.ibb.co/35bTfj7S/LOGO.jpg" alt="Artesanías Wayuu Wepiapaa Logo" class="logo-img" />
-      <div class="logo-text">
-        <span class="brand">ARTESANÍAS WAYUU</span>
-        <span class="sub">Wepiapaa</span>
-      </div>
+  <div class="hdr">
+    <a href="index.html" class="logo-a">
+      <img id="site-logo" src="https://i.ibb.co/35bTfj7S/LOGO.jpg" alt="Logo" class="logo-img"/>
+      <div class="logo-txt"><span class="brand">ARTESANÍAS WAYUU</span><span class="sub">Wepiapaa</span></div>
     </a>
-
     <nav id="main-nav">
       <ul>
-        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#inicio">Inicio</a></li>
         <li><a href="#categorias">Categorías</a></li>
         <li><a href="#productos">Productos</a></li>
         <li><a href="#nosotros">Nosotros</a></li>
@@ -36,299 +25,148 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-
-    <div class="header-actions">
-      <a href="admin.html" class="btn-admin-link" style="display:none;" aria-hidden="true">⚙️ Admin</a>
-      <button class="btn-cart" id="btn-open-cart" aria-label="Abrir carrito">
-        🛒 Carrito
-        <span class="cart-count" id="cart-count">0</span>
-      </button>
-      <button class="menu-toggle" id="menu-toggle" aria-label="Menú">☰</button>
+    <div class="hdr-r">
+      <a href="admin.html" style="display:none" aria-hidden="true"></a>
+      <button class="btn-cart" id="btn-cart">🛒 Carrito <span class="cart-badge" id="cart-badge">0</span></button>
+      <button class="ham" id="ham">☰</button>
     </div>
   </div>
 </header>
 
-<!-- HERO SLIDER -->
 <section class="hero" id="inicio">
-  <div class="slider-track" id="slider-track">
-
-    <div class="slide active">
-      <img src="https://i.ibb.co/HTmkH6GP/IMAGE-1.jpg" alt="Artesanías Wayuu" />
-      <div class="slide-content">
-        <span class="slide-badge">✨ Autenticidad Wayuu</span>
-        <h1>Arte que<br/>cuenta historias</h1>
-        <p>Cada tejido es una historia de nuestra cultura, tejida con amor y tradición desde La Guajira colombiana</p>
-        <div class="slide-cta">
-          <a href="#productos" class="btn-primary">Ver Colección</a>
-          <a href="#nosotros" class="btn-secondary">Nuestra Historia</a>
-        </div>
-      </div>
+  <div class="sl-track" id="sl-track">
+    <div class="slide on"><img src="https://i.ibb.co/HTmkH6GP/IMAGE-1.jpg" alt="Artesanías Wayuu" loading="eager"/>
+      <div class="sl-cnt"><span class="sl-badge">✨ Autenticidad Wayuu</span><h1>Arte que<br>cuenta historias</h1><p>Cada tejido es una historia de nuestra cultura, tejida con amor y tradición desde La Guajira</p><div class="sl-cta"><a href="#productos" class="btn-p">Ver Colección</a><a href="#nosotros" class="btn-s">Nuestra Historia</a></div></div>
     </div>
-
-    <div class="slide">
-      <img src="https://i.ibb.co/wNLJYmfk/IMAGE-2.jpg" alt="Mochilas Wayuu" />
-      <div class="slide-content">
-        <span class="slide-badge">🎒 Mochilas Wayuu</span>
-        <h1>Mochilas<br/>artesanales únicas</h1>
-        <p>Diseños exclusivos tejidos a mano, con colores vibrantes que reflejan la alegría y el espíritu Wayuu</p>
-        <div class="slide-cta">
-          <a href="#productos" class="btn-primary">Ver Mochilas</a>
-          <a href="#redes" class="btn-secondary">Síguenos</a>
-        </div>
-      </div>
+    <div class="slide"><img src="https://i.ibb.co/wNLJYmfk/IMAGE-2.jpg" alt="Mochilas Wayuu" loading="lazy"/>
+      <div class="sl-cnt"><span class="sl-badge">🎒 Mochilas Wayuu</span><h1>Mochilas<br>artesanales únicas</h1><p>Diseños exclusivos tejidos a mano, con colores vibrantes del espíritu Wayuu</p><div class="sl-cta"><a href="#productos" class="btn-p">Ver Mochilas</a><a href="#redes" class="btn-s">Síguenos</a></div></div>
     </div>
-
-    <div class="slide">
-      <img src="https://i.ibb.co/jPs4ZT1k/IMAGE-4.jpg" alt="Cultura Wayuu" />
-      <div class="slide-content">
-        <span class="slide-badge">🌿 Tradición Ancestral</span>
-        <h1>Cultura viva<br/>en cada punto</h1>
-        <p>Chinchorros, accesorios y piezas únicas que llevan la esencia y los colores del pueblo Wayuu</p>
-        <div class="slide-cta">
-          <a href="#productos" class="btn-primary">Explorar Tienda</a>
-          <a href="#categorias" class="btn-secondary">Categorías</a>
-        </div>
-      </div>
+    <div class="slide"><img src="https://i.ibb.co/jPs4ZT1k/IMAGE-4.jpg" alt="Cultura Wayuu" loading="lazy"/>
+      <div class="sl-cnt"><span class="sl-badge">🌿 Tradición Ancestral</span><h1>Cultura viva<br>en cada punto</h1><p>Chinchorros, accesorios y piezas únicas con la esencia del pueblo Wayuu</p><div class="sl-cta"><a href="#productos" class="btn-p">Explorar Tienda</a><a href="#categorias" class="btn-s">Categorías</a></div></div>
     </div>
-
-    <div class="slide">
-      <img src="https://i.ibb.co/NnyTPHV2/Captura-de-pantalla-2026-03-29-162208.jpg" alt="Artesanías" />
-      <div class="slide-content">
-        <span class="slide-badge">💛 Hecho con amor</span>
-        <h1>Envíos a todo<br/>Colombia</h1>
-        <p>Llevamos la magia Wayuu hasta tu puerta. Piezas artesanales con costo de envío acordado con el cliente</p>
-        <div class="slide-cta">
-          <a href="#productos" class="btn-primary">Comprar Ahora</a>
-          <a href="#contacto" class="btn-secondary">Contáctanos</a>
-        </div>
-      </div>
+    <div class="slide"><img src="https://i.ibb.co/NnyTPHV2/Captura-de-pantalla-2026-03-29-162208.jpg" alt="Artesanías" loading="lazy"/>
+      <div class="sl-cnt"><span class="sl-badge">💛 Hecho con amor</span><h1>Envíos a todo<br>Colombia</h1><p>Llevamos la magia Wayuu hasta tu puerta. El costo de envío es acordado con el cliente</p><div class="sl-cta"><a href="#productos" class="btn-p">Comprar Ahora</a><a href="#contacto" class="btn-s">Contáctanos</a></div></div>
     </div>
-
   </div>
-
-  <div class="slider-arrows">
-    <button class="arrow-btn" id="prev-slide">&#8592;</button>
-    <button class="arrow-btn" id="next-slide">&#8594;</button>
-  </div>
-  <div class="slider-dots" id="slider-dots"></div>
+  <div class="sl-arrows"><button class="arrow" id="prev">&#8592;</button><button class="arrow" id="next">&#8594;</button></div>
+  <div class="sl-dots" id="sl-dots"></div>
 </section>
 
-<!-- TRUST STRIP -->
-<div class="trust-strip">
-  <div class="trust-items">
-    <div class="trust-item"><span>🎨</span><span>100% Artesanal</span></div>
-    <div class="trust-item"><span>✋</span><span>Hecho a Mano</span></div>
-    <div class="trust-item"><span>📦</span><span>Envíos Nacionales</span></div>
-    <div class="trust-item"><span>💬</span><span>Pedidos por WhatsApp</span></div>
-    <div class="trust-item"><span>🌟</span><span>Cultura Wayuu Auténtica</span></div>
-  </div>
-</div>
+<div class="trust"><div class="trust-in">
+  <div class="ti"><span>🎨</span><span>100% Artesanal</span></div>
+  <div class="ti"><span>✋</span><span>Hecho a Mano</span></div>
+  <div class="ti"><span>📦</span><span>Envíos Nacionales</span></div>
+  <div class="ti"><span>💬</span><span>Pedidos por WhatsApp</span></div>
+  <div class="ti"><span>🌟</span><span>Cultura Wayuu</span></div>
+</div></div>
 
-<!-- CATEGORIES -->
-<section class="categories" id="categorias">
-  <div class="section-header">
-    <span class="section-label">Nuestros Productos</span>
-    <h2>Explora nuestras categorías</h2>
-    <div class="section-divider"><span class="divider-gem">🌺</span></div>
-  </div>
-  <div class="cat-grid">
-    <div class="cat-card" onclick="filterCategory('Mochilas')">
-      <img src="https://i.ibb.co/WYX54Qj/Captura-de-pantalla-2026-03-29-162250.jpg" alt="Mochilas Wayuu" />
-      <div class="cat-overlay">
-        <h3>Mochilas Wayuu</h3>
-        <p>Tejidas a mano con hilos de colores vibrantes</p>
-        <span class="cat-btn">Ver Mochilas</span>
-      </div>
-    </div>
-    <div class="cat-card" onclick="filterCategory('Chinchorros')">
-      <img src="https://i.ibb.co/6R1pv2cW/Captura-de-pantalla-2026-03-29-162314.jpg" alt="Chinchorros Wayuu" />
-      <div class="cat-overlay">
-        <h3>Chinchorros Wayuu</h3>
-        <p>Descanso y comodidad con arte ancestral</p>
-        <span class="cat-btn">Ver Chinchorros</span>
-      </div>
-    </div>
-    <div class="cat-card" onclick="filterCategory('Accesorios')">
-      <img src="https://i.ibb.co/NnyTPHV2/Captura-de-pantalla-2026-03-29-162208.jpg" alt="Accesorios Wayuu" />
-      <div class="cat-overlay">
-        <h3>Accesorios</h3>
-        <p>Pulseras, collares y más piezas únicas</p>
-        <span class="cat-btn">Ver Accesorios</span>
-      </div>
-    </div>
+<section class="cats" id="categorias">
+  <div class="sh"><span class="sl">Nuestros Productos</span><h2>Explora nuestras categorías</h2><div class="sdiv"><span>🌺</span></div></div>
+  <div class="cat-g">
+    <div class="cat-c" onclick="filterCat('Mochilas')"><img src="https://i.ibb.co/WYX54Qj/Captura-de-pantalla-2026-03-29-162250.jpg" alt="Mochilas"/><div class="cat-o"><h3>Mochilas Wayuu</h3><p>Tejidas a mano con hilos de colores vibrantes</p><span class="cat-btn">Ver Mochilas</span></div></div>
+    <div class="cat-c" onclick="filterCat('Chinchorros')"><img src="https://i.ibb.co/6R1pv2cW/Captura-de-pantalla-2026-03-29-162314.jpg" alt="Chinchorros"/><div class="cat-o"><h3>Chinchorros Wayuu</h3><p>Descanso y comodidad con arte ancestral</p><span class="cat-btn">Ver Chinchorros</span></div></div>
+    <div class="cat-c" onclick="filterCat('Accesorios')"><img src="https://i.ibb.co/NnyTPHV2/Captura-de-pantalla-2026-03-29-162208.jpg" alt="Accesorios"/><div class="cat-o"><h3>Accesorios</h3><p>Pulseras, collares y más piezas únicas</p><span class="cat-btn">Ver Accesorios</span></div></div>
   </div>
 </section>
 
-<!-- PRODUCTS -->
-<section class="products-section" id="productos">
-  <div class="section-header">
-    <span class="section-label">Tienda</span>
-    <h2>Nuestros Productos</h2>
-    <div class="section-divider"><span class="divider-gem">🌺</span></div>
+<section class="prods" id="productos">
+  <div class="sh"><span class="sl">Tienda</span><h2>Nuestros Productos</h2><div class="sdiv"><span>🌺</span></div></div>
+  <div class="fbar">
+    <button class="fbtn on" onclick="filterCat('Todos')">Todos</button>
+    <button class="fbtn" onclick="filterCat('Mochilas')">Mochilas</button>
+    <button class="fbtn" onclick="filterCat('Chinchorros')">Chinchorros</button>
+    <button class="fbtn" onclick="filterCat('Accesorios')">Accesorios</button>
   </div>
-
-  <div class="filter-bar" id="filter-bar">
-    <button class="filter-btn active" onclick="filterCategory('Todos')">Todos</button>
-    <button class="filter-btn" onclick="filterCategory('Mochilas')">Mochilas</button>
-    <button class="filter-btn" onclick="filterCategory('Chinchorros')">Chinchorros</button>
-    <button class="filter-btn" onclick="filterCategory('Accesorios')">Accesorios</button>
-  </div>
-
-  <div class="products-grid" id="products-grid">
-    <div class="loading-state">
-      <div class="spinner"></div>
-      <p style="color: var(--color-text-light); font-family: 'Playfair Display', serif;">Cargando productos...</p>
-    </div>
-  </div>
+  <div class="pgrid" id="pgrid"><div class="lbox"><div class="spin"></div><p style="color:var(--soft);font-family:'Playfair Display',serif">Cargando productos...</p></div></div>
 </section>
 
-<!-- ABOUT -->
-<section class="about-section" id="nosotros">
-  <div class="about-inner">
-    <div class="about-img">
-      <img src="https://i.ibb.co/HTmkH6GP/IMAGE-1.jpg" alt="Artesanas Wayuu" style="height:420px;" />
-    </div>
-    <div class="about-content">
-      <span class="section-label">Nuestra Historia</span>
+<section class="about" id="nosotros">
+  <div class="ab-in">
+    <div class="ab-img"><img src="https://i.ibb.co/HTmkH6GP/IMAGE-1.jpg" alt="Artesanas Wayuu" style="height:380px"/></div>
+    <div class="ab-txt">
+      <span class="sl">Nuestra Historia</span>
       <h2>Arte Wayuu desde el corazón de La Guajira</h2>
-      <p>
-        <strong style="color:white">ARTESANÍAS WAYUU WEPIAPAA</strong> es una tienda de artesanías auténticas, creadas por las manos expertas de mujeres wayuu de La Guajira colombiana. Cada pieza es única, tejida con hilos de colores que cuentan historias de nuestra cultura y tradición ancestral.
-      </p>
-      <p>
-        "Wepiapaa" significa en wayunaiki <em>"lugar de origen"</em>, un nombre que honra nuestras raíces y el orgullo de ser pueblo Wayuu. Trabajamos directamente con artesanas para garantizar autenticidad, calidad y comercio justo.
-      </p>
-      <div class="about-stats">
-        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Artesanal</div></div>
-        <div class="stat"><div class="stat-num">+500</div><div class="stat-label">Piezas vendidas</div></div>
-        <div class="stat"><div class="stat-num">✋</div><div class="stat-label">Hecho a mano</div></div>
+      <p><strong style="color:#fff">ARTESANÍAS WAYUU WEPIAPAA</strong> es una tienda de artesanías auténticas creadas por mujeres wayuu de La Guajira colombiana. Cada pieza es única, tejida con hilos de colores que cuentan historias de nuestra cultura ancestral.</p>
+      <p>"Wepiapaa" significa en wayunaiki <em>"lugar de origen"</em>, nombre que honra nuestras raíces y el orgullo de ser pueblo Wayuu.</p>
+      <div class="ab-stats">
+        <div><div class="ast-n">100%</div><div class="ast-l">Artesanal</div></div>
+        <div><div class="ast-n">+500</div><div class="ast-l">Piezas vendidas</div></div>
+        <div><div class="ast-n">✋</div><div class="ast-l">Hecho a mano</div></div>
       </div>
-      <a href="#productos" class="btn-primary" style="display:inline-block; margin-top:8px;">Ver Colección</a>
+      <a href="#productos" class="btn-p" style="margin-top:8px">Ver Colección</a>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
-<section class="gallery-section">
-  <div class="section-header">
-    <span class="section-label">Galería</span>
-    <h2>Nuestras Creaciones</h2>
-    <div class="section-divider"><span class="divider-gem">🌺</span></div>
-  </div>
-  <div class="gallery-grid">
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/HTmkH6GP/IMAGE-1.jpg" alt="Artesanía 1" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/wNLJYmfk/IMAGE-2.jpg" alt="Artesanía 2" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/jPs4ZT1k/IMAGE-4.jpg" alt="Artesanía 3" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/NnyTPHV2/Captura-de-pantalla-2026-03-29-162208.jpg" alt="Artesanía 4" />
-    </div>
-    <div class="gallery-item">
-      <img src="https://i.ibb.co/WYX54Qj/Captura-de-pantalla-2026-03-29-162250.jpg" alt="Artesanía 5" />
-    </div>
+<section class="gall">
+  <div class="sh"><span class="sl">Galería</span><h2>Nuestras Creaciones</h2><div class="sdiv"><span>🌺</span></div></div>
+  <div class="gg">
+    <div class="gi"><img src="https://i.ibb.co/HTmkH6GP/IMAGE-1.jpg" alt="Artesanía 1"/></div>
+    <div class="gi"><img src="https://i.ibb.co/wNLJYmfk/IMAGE-2.jpg" alt="Artesanía 2"/></div>
+    <div class="gi"><img src="https://i.ibb.co/jPs4ZT1k/IMAGE-4.jpg" alt="Artesanía 3"/></div>
+    <div class="gi"><img src="https://i.ibb.co/NnyTPHV2/Captura-de-pantalla-2026-03-29-162208.jpg" alt="Artesanía 4"/></div>
+    <div class="gi"><img src="https://i.ibb.co/WYX54Qj/Captura-de-pantalla-2026-03-29-162250.jpg" alt="Artesanía 5"/></div>
   </div>
 </section>
 
-<!-- SOCIAL -->
-<section class="social-section" id="redes">
-  <div class="section-header">
-    <span class="section-label">Síguenos</span>
-    <h2>Redes Sociales</h2>
-    <div class="section-divider"><span class="divider-gem">🌺</span></div>
-  </div>
-  <div class="social-grid" id="social-grid">
-    <!-- Se carga dinámicamente desde Firebase -->
-    <a href="https://wa.me/573137904864" target="_blank" class="social-card">
-      <span class="social-icon">📱</span>
-      <div class="social-info">
-        <strong>WhatsApp</strong>
-        <span>3137904864</span>
-      </div>
-    </a>
+<section class="soc-sec" id="redes">
+  <div class="sh"><span class="sl">Síguenos</span><h2>Redes Sociales</h2><div class="sdiv"><span>🌺</span></div></div>
+  <div class="soc-g" id="soc-g">
+    <a href="https://wa.me/573137904864" target="_blank" class="sc"><span class="si">💬</span><div class="sinfo"><strong>WhatsApp</strong><span>3137904864</span></div></a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer id="contacto">
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <img src="https://i.ibb.co/35bTfj7S/LOGO.jpg" alt="Logo Wayuu Wepiapaa" />
+  <div class="fg">
+    <div class="fb">
+      <img id="footer-logo" src="https://i.ibb.co/35bTfj7S/LOGO.jpg" alt="Logo"/>
       <h3>ARTESANÍAS WAYUU WEPIAPAA</h3>
-      <p>Arte y cultura Wayuu auténtica desde La Guajira colombiana. Cada pieza es única, tejida a mano con amor y tradición ancestral.</p>
+      <p>Arte y cultura Wayuu auténtica desde La Guajira colombiana. Cada pieza tejida a mano con amor y tradición ancestral.</p>
     </div>
-    <div class="footer-col">
-      <h4>Navegación</h4>
-      <ul>
-        <li><a href="#inicio">Inicio</a></li>
-        <li><a href="#categorias">Categorías</a></li>
-        <li><a href="#productos">Productos</a></li>
-        <li><a href="#nosotros">Nosotros</a></li>
-        <li><a href="#redes">Redes Sociales</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Categorías</h4>
-      <ul>
-        <li><a href="#productos" onclick="filterCategory('Mochilas')">Mochilas</a></li>
-        <li><a href="#productos" onclick="filterCategory('Chinchorros')">Chinchorros</a></li>
-        <li><a href="#productos" onclick="filterCategory('Accesorios')">Accesorios</a></li>
-        <li><a href="#productos" onclick="filterCategory('Todos')">Todos los productos</a></li>
-      </ul>
-    </div>
-    <div class="footer-col">
-      <h4>Contacto</h4>
-      <ul class="footer-contact">
-        <li><span>📱</span><span>WhatsApp: 3137904864</span></li>
-        <li><span>📍</span><span>La Guajira, Colombia</span></li>
-        <li><span>📦</span><span>Envíos a todo Colombia</span></li>
-        <li><span>✋</span><span>Arte Wayuu auténtico</span></li>
-      </ul>
-    </div>
+    <div class="fc"><h4>Navegación</h4><ul><li><a href="#inicio">Inicio</a></li><li><a href="#categorias">Categorías</a></li><li><a href="#productos">Productos</a></li><li><a href="#nosotros">Nosotros</a></li><li><a href="#redes">Redes</a></li></ul></div>
+    <div class="fc"><h4>Categorías</h4><ul><li><a href="#productos" onclick="filterCat('Mochilas')">Mochilas</a></li><li><a href="#productos" onclick="filterCat('Chinchorros')">Chinchorros</a></li><li><a href="#productos" onclick="filterCat('Accesorios')">Accesorios</a></li></ul></div>
+    <div class="fc"><h4>Contacto</h4><ul class="fct"><li><span>📱</span><span>WhatsApp: 3137904864</span></li><li><span>📍</span><span>La Guajira, Colombia</span></li><li><span>📦</span><span>Envíos a todo Colombia</span></li></ul></div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2026 <span class="accent">Artesanías Wayuu Wepiapaa</span>. Todos los derechos reservados.</p>
-    <p>Hecho con ❤️ desde <span class="accent">La Guajira, Colombia</span></p>
-  </div>
+  <div class="fbot"><p>© 2026 <span class="ac">Artesanías Wayuu Wepiapaa</span>. Todos los derechos reservados.</p><p>Hecho con ❤️ desde <span class="ac">La Guajira, Colombia</span></p></div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
-<a href="https://wa.me/573137904864" target="_blank" class="whatsapp-float" title="Contáctanos por WhatsApp">
-  📱
+<!-- BOTÓN WA FLOTANTE — ÍCONO SVG OFICIAL -->
+<a href="https://wa.me/573137904864" target="_blank" rel="noopener" class="wa" title="Contáctanos por WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
-<!-- CART SIDEBAR -->
-<div class="cart-overlay" id="cart-overlay"></div>
-<aside class="cart-sidebar" id="cart-sidebar">
-  <div class="cart-header">
-    <h2>🛒 Tu Carrito</h2>
-    <button class="btn-close-cart" id="btn-close-cart">✕</button>
-  </div>
-  <div class="cart-items" id="cart-items-list">
-    <div class="cart-empty">
-      <div class="empty-icon">🛒</div>
-      <p>Tu carrito está vacío</p>
+<!-- CARRITO -->
+<div class="cov" id="cov"></div>
+<aside class="cs" id="cs">
+  <div class="ch"><h2>🛒 Tu Carrito</h2><button class="btn-xc" id="btn-xc">✕</button></div>
+  <div class="cb" id="cb"><div class="ce"><div class="ei">🛒</div><p>Tu carrito está vacío</p></div></div>
+  <div class="cf" id="cf" style="display:none">
+    <div class="ctrow"><span>Subtotal:</span><strong id="ctotal">$0</strong></div>
+    <div class="snote">📦 El costo del envío será acordado directamente con el vendedor.</div>
+    <!-- FORMULARIO DE DATOS DE ENVÍO -->
+    <div class="chk-form">
+      <h4>📋 Datos para el envío</h4>
+      <div class="chk-row">
+        <div><label class="clabel">Nombre completo *</label><input class="cinput" id="ck-nombre" type="text" placeholder="Tu nombre"/></div>
+        <div><label class="clabel">Teléfono / WhatsApp *</label><input class="cinput" id="ck-tel" type="tel" placeholder="3001234567"/></div>
+      </div>
+      <div class="chk-row full">
+        <div><label class="clabel">Ciudad y departamento *</label><input class="cinput" id="ck-ciudad" type="text" placeholder="Ej: Bogotá, Cundinamarca"/></div>
+      </div>
+      <div class="chk-row full">
+        <div><label class="clabel">Dirección de entrega *</label><input class="cinput" id="ck-dir" type="text" placeholder="Calle, carrera, barrio..."/></div>
+      </div>
+      <div class="chk-row full">
+        <div><label class="clabel">Notas adicionales (opcional)</label><input class="cinput" id="ck-nota" type="text" placeholder="Apto, piso, indicaciones..."/></div>
+      </div>
     </div>
-  </div>
-  <div class="cart-footer" id="cart-footer" style="display:none">
-    <div class="cart-total">
-      <span>Total:</span>
-      <strong id="cart-total-price">$0</strong>
-    </div>
-    <div class="shipping-note">📦 El costo del envío será acordado directamente con el cliente.</div>
-    <button class="btn-whatsapp" id="btn-send-whatsapp">
-      📱 Pedir por WhatsApp
+    <button class="btn-wa-order" id="btn-wa-order">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Enviar Pedido por WhatsApp
     </button>
   </div>
 </aside>
-
-<!-- TOAST -->
 <div class="toast" id="toast"></div>
-
-<!-- FIREBASE + SCRIPTS -->
 <script type="module" src="script.js"></script>
 </body>
 </html>
