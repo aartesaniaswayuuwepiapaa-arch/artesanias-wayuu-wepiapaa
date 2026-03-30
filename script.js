@@ -74,7 +74,37 @@ function render(){
 }
 function cardHTML(p){
   const img=p.imagen||DIMG,pr=parseFloat(p.precio)||0;
-  return`<div class="pc"><div class="pi"><img src="${x(img)}" alt="${x(p.nombre)}" loading="lazy" onerror="this.src='${DIMG}'"><span class="pb">✨ Artesanal</span><button class="pw" onclick="this.textContent=this.textContent==='🤍'?'❤️':'🤍'">🤍</button></div><div class="pinfo"><span class="pcat">${x(p.categoria||'Artesanía')}</span><h3>${x(p.nombre)}</h3><p class="pdesc">${x(p.descripcion||'')}</p><div class="pfoot"><span class="pprice">${fmt(pr)}</span><button class="btn-add" onclick="addCart('${p.id}')">🛒 Agregar</button></div></div></div>`;
+  return`<div class="pc"><div class="pi" onclick="openProduct('${p.id}')" style="cursor:pointer"><img src="${x(img)}" alt="${x(p.nombre)}" loading="lazy" onerror="this.src='${DIMG}'"><span class="pb">✨ Artesanal</span><span class="pi-zoom">🔍 Ver detalle</span><button class="pw" onclick="event.stopPropagation();this.textContent=this.textContent==='🤍'?'❤️':'🤍'">🤍</button></div><div class="pinfo"><span class="pcat">${x(p.categoria||'Artesanía')}</span><h3>${x(p.nombre)}</h3><p class="pdesc">${x(p.descripcion||'')}</p><div class="pfoot"><span class="pprice">${fmt(pr)}</span><button class="btn-add" onclick="addCart('${p.id}')">🛒 Agregar</button></div></div></div>`;
+}
+
+// MODAL DETALLE DE PRODUCTO
+window.openProduct=function(id){
+  const p=products.find(q=>q.id===id);if(!p)return;
+  const img=p.imagen||DIMG,pr=parseFloat(p.precio)||0;
+  const mo=document.getElementById('prod-modal');
+  mo.innerHTML=`
+    <div class="pm-box">
+      <button class="pm-close" id="pm-close">✕</button>
+      <div class="pm-img"><img src="${x(img)}" alt="${x(p.nombre)}" onerror="this.src='${DIMG}'"/></div>
+      <div class="pm-info">
+        <span class="pcat">${x(p.categoria||'Artesanía')}</span>
+        <h2 class="pm-title">${x(p.nombre)}</h2>
+        <p class="pm-desc">${x(p.descripcion||'Sin descripción disponible.')}</p>
+        <div class="pm-price">${fmt(pr)}</div>
+        <div class="pm-actions">
+          <button class="btn-add pm-btn-add" onclick="addCart('${p.id}');closeProdModal()">🛒 Agregar al carrito</button>
+        </div>
+        <p class="pm-note">📦 Envíos a todo Colombia · El costo de envío se acuerda con el vendedor</p>
+      </div>
+    </div>`;
+  mo.classList.add('on');
+  document.body.style.overflow='hidden';
+  document.getElementById('pm-close').onclick=closeProdModal;
+  mo.addEventListener('click',function handler(e){if(e.target===mo){closeProdModal();mo.removeEventListener('click',handler);}});
+};
+function closeProdModal(){
+  document.getElementById('prod-modal').classList.remove('on');
+  document.body.style.overflow='';
 }
 function showEmpty(ico,ttl,msg){
   grid.innerHTML=`<div class="ebox"><div class="eico">${ico}</div><h3 style="font-family:'Cinzel',serif;color:var(--gd);margin-bottom:7px">${ttl}</h3><p>${msg}</p></div>`;
@@ -120,7 +150,7 @@ function renderCart(){
     return`<div class="cit"><img class="cim" src="${x(it.imagen||DIMG)}" alt="${x(it.nombre)}" onerror="this.src='${DIMG}'"><div class="cin"><div class="cnm">${x(it.nombre)}</div><div class="cpr">${fmt(it.precio)}</div><div class="cqw"><button class="qb" onclick="chQ('${it.id}',-1)">−</button><span class="qn">${it.qty}</span><button class="qb" onclick="chQ('${it.id}',1)">+</button></div></div><button class="brm" onclick="rmIt('${it.id}')">🗑️</button></div>`;
   }).join('');
   document.getElementById('ctotal').textContent=fmt(total);
-  cf.style.display='block';
+  cf.style.cssText='display:block !important;visibility:visible;opacity:1;';
 }
 window.chQ=function(id,d){const it=cart.find(c=>c.id===id);if(!it)return;it.qty+=d;if(it.qty<=0)cart=cart.filter(c=>c.id!==id);saveCart();};
 window.rmIt=function(id){cart=cart.filter(c=>c.id!==id);saveCart();};
