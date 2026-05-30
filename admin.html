@@ -211,9 +211,16 @@ tr:last-child td{border-bottom:none}tr:hover td{background:rgba(232,245,233,.45)
             </div>
             <div class="fgrp full"><label class="fl">Descripción</label><textarea class="fta" id="f-desc" placeholder="Materiales, colores, tamaño, técnica..."></textarea></div>
             <div class="fgrp full">
-              <label class="fl">URL de imagen (desde IMGBB) *</label>
-              <input class="fi" type="url" id="f-img" placeholder="https://i.ibb.co/..." oninput="prevImg(this.value)"/>
-              <p class="hint">💡 imgbb.com → sube tu imagen → copia el "Direct link"</p>
+              <label class="fl">Imagen del producto *</label>
+              <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+                <label class="btn-gold" style="cursor:pointer;display:inline-block;padding:9px 18px;border-radius:10px;font-size:.82rem;font-weight:700">
+                  📁 Seleccionar imagen
+                  <input type="file" id="f-img-file" accept="image/*" style="display:none" onchange="uploadToImgbb(this)"/>
+                </label>
+                <span id="upload-status" style="font-size:.78rem;color:var(--soft);font-style:italic"></span>
+              </div>
+              <input class="fi" type="url" id="f-img" placeholder="Se rellena automático al subir imagen..." oninput="prevImg(this.value)" style="margin-bottom:5px"/>
+              <p class="hint">💡 Selecciona la imagen y se sube a IMGBB automáticamente. También puedes pegar una URL manual.</p>
               <img id="img-prev" class="iprev" alt="Vista previa"/>
             </div>
           </div>
@@ -243,9 +250,16 @@ tr:last-child td{border-bottom:none}tr:hover td{background:rgba(232,245,233,.45)
             <div class="logo-now"><img id="logo-current" src="https://i.ibb.co/35bTfj7S/LOGO.jpg" alt="Logo actual"/><p>Logo actual</p></div>
             <div class="logo-fw">
               <div class="fgrp" style="margin-bottom:0">
-                <label class="fl">URL del nuevo logo (desde IMGBB)</label>
-                <input class="fi" type="url" id="logo-url" placeholder="https://i.ibb.co/..." oninput="prevLogo(this.value)"/>
-                <p class="hint">Formato recomendado: cuadrado, mínimo 200×200px</p>
+                <label class="fl">Nuevo logo de la tienda</label>
+                <div style="display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-bottom:8px">
+                  <label class="btn-gold" style="cursor:pointer;display:inline-block;padding:9px 18px;border-radius:10px;font-size:.82rem;font-weight:700">
+                    📁 Seleccionar logo
+                    <input type="file" id="logo-file" accept="image/*" style="display:none" onchange="uploadLogoToImgbb(this)"/>
+                  </label>
+                  <span id="logo-upload-status" style="font-size:.78rem;color:var(--soft);font-style:italic"></span>
+                </div>
+                <input class="fi" type="url" id="logo-url" placeholder="Se rellena automático al subir imagen..." oninput="prevLogo(this.value)"/>
+                <p class="hint">Formato recomendado: cuadrado, mínimo 200×200px. También puedes pegar una URL manual.</p>
                 <img id="logo-prev" class="logo-round" alt="Nuevo logo"/>
               </div>
               <div class="fact">

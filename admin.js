@@ -259,5 +259,80 @@ function toast(msg,type=''){
   setTimeout(()=>t.className='toast',3600);
 }
 
+// ── IMGBB UPLOAD ──
+const IMGBB_KEY = '50345b22b26d49b0af83e546a19eb5ae';
+
+// Subida automática para imagen de producto
+window.uploadToImgbb = async function(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const status = document.getElementById('upload-status');
+  const imgInput = document.getElementById('f-img');
+  const prev = document.getElementById('img-prev');
+  status.textContent = '⏳ Subiendo imagen...';
+  status.style.color = 'var(--soft)';
+  const form = new FormData();
+  form.append('image', file);
+  try {
+    const res = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_KEY}`, { method:'POST', body:form });
+    const data = await res.json();
+    if (data.success) {
+      const url = data.data.url;
+      imgInput.value = url;
+      prev.src = url;
+      prev.classList.add('on');
+      status.textContent = '✅ Imagen subida correctamente';
+      status.style.color = 'var(--ok)';
+      toast('✅ Imagen subida a IMGBB','ok');
+    } else {
+      status.textContent = '❌ Error al subir. Intenta de nuevo.';
+      status.style.color = 'var(--red)';
+      toast('❌ Error al subir la imagen','err');
+    }
+  } catch(e) {
+    status.textContent = '❌ Sin conexión o error de red.';
+    status.style.color = 'var(--red)';
+    toast('❌ Error de conexión con IMGBB','err');
+    console.error('IMGBB error:', e);
+  }
+  input.value = '';
+};
+
+// Subida automática para logo de la tienda
+window.uploadLogoToImgbb = async function(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const status = document.getElementById('logo-upload-status');
+  const logoInput = document.getElementById('logo-url');
+  const prev = document.getElementById('logo-prev');
+  status.textContent = '⏳ Subiendo logo...';
+  status.style.color = 'var(--soft)';
+  const form = new FormData();
+  form.append('image', file);
+  try {
+    const res = await fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_KEY}`, { method:'POST', body:form });
+    const data = await res.json();
+    if (data.success) {
+      const url = data.data.url;
+      logoInput.value = url;
+      prev.src = url;
+      prev.classList.add('on');
+      status.textContent = '✅ Logo subido correctamente';
+      status.style.color = 'var(--ok)';
+      toast('✅ Logo subido a IMGBB','ok');
+    } else {
+      status.textContent = '❌ Error al subir. Intenta de nuevo.';
+      status.style.color = 'var(--red)';
+      toast('❌ Error al subir el logo','err');
+    }
+  } catch(e) {
+    status.textContent = '❌ Sin conexión o error de red.';
+    status.style.color = 'var(--red)';
+    toast('❌ Error de conexión con IMGBB','err');
+    console.error('IMGBB error:', e);
+  }
+  input.value = '';
+};
+
 // ── ESCAPE HTML ──
 function x(s){if(s==null)return'';return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
